@@ -19,3 +19,8 @@ class User(BaseModel):
 def create_user(user: User):
     users.append(user)
     return {"message": "User created successfully", "user": user}
+
+@app.get("/user")
+def get_users():
+    return {"users": users}
+
